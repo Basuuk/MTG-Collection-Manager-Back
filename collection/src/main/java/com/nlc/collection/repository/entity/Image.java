@@ -11,5 +11,5 @@ public class Image {
 
 	private String small;
 	private String normal;
-	private String borderCrop;
+	private String border_crop;
 }

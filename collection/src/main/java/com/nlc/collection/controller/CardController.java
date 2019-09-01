@@ -2,6 +2,7 @@ package com.nlc.collection.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +13,7 @@ import com.nlc.collection.repository.entity.Card;
 import com.nlc.collection.service.CardService;
 
 @RestController
+@CrossOrigin()
 public class CardController {
 
 	@Autowired
