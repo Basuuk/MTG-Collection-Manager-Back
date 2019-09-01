@@ -10,5 +10,7 @@ public interface CardService {
 
 	Card create(Card card);
 
-	void readFile();
+	void splitFile();
+
+	void readAllFiles();
 }

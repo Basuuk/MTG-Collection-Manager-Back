@@ -1,6 +1,7 @@
 package com.nlc.collection.service.impl;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -10,6 +11,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.BasicDBObject;
 import com.nlc.collection.repository.CardRepository;
 import com.nlc.collection.repository.entity.Card;
@@ -35,17 +38,34 @@ public class CardServiceImpl implements CardService {
 	}
 
 	@Override
-	public void readFile() {
-		try (BufferedReader br = new BufferedReader(new FileReader("E:\\Basuuk\\Downloads\\omnath-ugly.json"))) {
-			String line;
-			while ((line = br.readLine()) != null) {
-				BasicDBObject c = BasicDBObject.parse(line);
-				Card ca = mongoTemplate.getConverter().read(Card.class, c);
-				repository.save(ca);
+	public void splitFile() {
+		try (BufferedReader br = new BufferedReader(new FileReader("E:\\Basuuk\\Downloads\\scryfall-default-cards.json"))) {
+			ObjectMapper m = new ObjectMapper();
+			JsonNode j = m.readValue(br, JsonNode.class);
+			int count = 1;
+			for (JsonNode js : j) {
+				new ObjectMapper().writeValue(new File("E:\\Basuuk\\Downloads\\cards\\card-" + count + ".json"), js);
+				count++;
 			}
+			System.out.println("FINISHED");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public void readAllFiles() {
+		for (File f : new File("E:\\Basuuk\\Downloads\\cards").listFiles()) {
+			try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+				String line;
+				while ((line = br.readLine()) != null) {
+					repository.save(mongoTemplate.getConverter().read(Card.class, BasicDBObject.parse(line)));
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		System.out.println("FINISHED");
 	}
 
 }

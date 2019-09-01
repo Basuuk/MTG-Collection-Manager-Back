@@ -26,9 +26,14 @@ public class CardController {
 		return service.create(card);
 	}
 
-	@PostMapping(value = "/cards-file")
-	public void readFile() {
-		service.readFile();
+	@PostMapping(value = "/cards-split-file")
+	public void splitFile() {
+		service.splitFile();
+	}
+
+	@PostMapping(value = "/read-card-files")
+	public void readAllFiles() {
+		service.readAllFiles();
 	}
 
 }
