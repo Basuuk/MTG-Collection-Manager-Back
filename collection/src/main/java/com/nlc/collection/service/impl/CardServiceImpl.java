@@ -28,8 +28,8 @@ public class CardServiceImpl implements CardService {
 	private MongoTemplate mongoTemplate;
 
 	@Override
-	public Page<Card> findAll() {
-		return repository.findAll(PageRequest.of(0, 10));
+	public Page<Card> findAll(Integer page, Integer size) {
+		return repository.findAll(PageRequest.of(page, size));
 	}
 
 	@Override

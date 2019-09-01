@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nlc.collection.repository.entity.Card;
@@ -17,8 +18,8 @@ public class CardController {
 	private CardService service;
 
 	@GetMapping(value = "/cards")
-	public Page<Card> findAll() {
-		return service.findAll();
+	public Page<Card> findAll(@RequestParam(value = "page", defaultValue = "0", required = false) Integer page, @RequestParam(value = "size", defaultValue = "10", required = false) Integer size) {
+		return service.findAll(page, size);
 	}
 
 	@PostMapping(value = "/cards")

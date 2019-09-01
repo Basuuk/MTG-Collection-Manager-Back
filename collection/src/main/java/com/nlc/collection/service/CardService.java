@@ -6,7 +6,7 @@ import com.nlc.collection.repository.entity.Card;
 
 public interface CardService {
 
-	Page<Card> findAll();
+	Page<Card> findAll(Integer page, Integer size);
 
 	Card create(Card card);
 
