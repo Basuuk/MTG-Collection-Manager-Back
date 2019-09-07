@@ -1,4 +1,4 @@
-package com.nlc.collection.repository.entity;
+package com.nlc.collection.repository.mongo.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

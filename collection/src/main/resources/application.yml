@@ -4,3 +4,11 @@ spring:
       host: localhost
       port: 27017
       database: mtg
+  datasource:
+    url: jdbc:mariadb://localhost:3306/mtgsql
+    username: root
+    password: root
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate

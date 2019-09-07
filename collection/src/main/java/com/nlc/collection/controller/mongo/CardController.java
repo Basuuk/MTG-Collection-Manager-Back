@@ -1,4 +1,4 @@
-package com.nlc.collection.controller;
+package com.nlc.collection.controller.mongo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nlc.collection.repository.entity.Card;
-import com.nlc.collection.service.CardService;
+import com.nlc.collection.repository.mongo.entity.Card;
+import com.nlc.collection.service.mongo.CardService;
 
 @RestController
-@CrossOrigin()
+@CrossOrigin
 public class CardController {
 
 	@Autowired

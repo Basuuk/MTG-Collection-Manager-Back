@@ -1,4 +1,4 @@
-package com.nlc.collection.service.impl;
+package com.nlc.collection.service.mongo.impl;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,9 +14,9 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.BasicDBObject;
-import com.nlc.collection.repository.CardRepository;
-import com.nlc.collection.repository.entity.Card;
-import com.nlc.collection.service.CardService;
+import com.nlc.collection.repository.mongo.CardRepository;
+import com.nlc.collection.repository.mongo.entity.Card;
+import com.nlc.collection.service.mongo.CardService;
 
 @Service
 public class CardServiceImpl implements CardService {

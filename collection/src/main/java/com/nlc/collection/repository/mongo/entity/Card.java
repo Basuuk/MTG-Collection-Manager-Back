@@ -1,4 +1,4 @@
-package com.nlc.collection.repository.entity;
+package com.nlc.collection.repository.mongo.entity;
 
 import java.io.Serializable;
 import java.util.List;
