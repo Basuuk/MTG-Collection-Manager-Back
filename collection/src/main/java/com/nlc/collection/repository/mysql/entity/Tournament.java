@@ -39,4 +39,10 @@ public class Tournament implements Serializable {
 
 	@Column(name = "comments", nullable = true, length = 4000)
 	private String comments;
+
+	@Column(name = "location", nullable = false, length = 100)
+	private String location;
+
+	@Column(name = "title", nullable = false, length = 100)
+	private String title;
 }
