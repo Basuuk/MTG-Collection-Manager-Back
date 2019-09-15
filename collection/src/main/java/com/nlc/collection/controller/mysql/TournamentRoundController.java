@@ -23,4 +23,9 @@ public class TournamentRoundController {
 		return service.findByIdIdTournament(tournamentId);
 	}
 
+	@GetMapping(value = "/player-rounds")
+	public List<TournamentRound> findByIdIdTournamentAndPlayer1Id(@RequestParam(value = "tournamentId", required = true) Integer tournamentId, @RequestParam(value = "playerId", required = true) Integer playerId) {
+		return service.findByIdIdTournamentAndPlayer1Id(tournamentId, playerId);
+	}
+
 }

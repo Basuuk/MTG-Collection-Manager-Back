@@ -20,4 +20,9 @@ public class TournamentRoundServiceImpl implements TournamentRoundService {
 		return repository.findByIdIdTournament(tournamentId);
 	}
 
+	@Override
+	public List<TournamentRound> findByIdIdTournamentAndPlayer1Id(Integer tournamentId, Integer playerId) {
+		return repository.findByIdIdTournamentAndPlayer1Id(tournamentId, playerId);
+	}
+
 }

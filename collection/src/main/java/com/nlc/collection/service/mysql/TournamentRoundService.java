@@ -8,4 +8,6 @@ public interface TournamentRoundService {
 
 	List<TournamentRound> findByIdIdTournament(Integer tournamentId);
 
+	List<TournamentRound> findByIdIdTournamentAndPlayer1Id(Integer tournamentId, Integer playerId);
+
 }
