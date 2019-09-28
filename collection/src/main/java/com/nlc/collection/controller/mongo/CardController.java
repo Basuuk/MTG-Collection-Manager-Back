@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +23,11 @@ public class CardController {
 	@GetMapping(value = "/cards")
 	public Page<Card> findAll(@RequestParam(value = "page", defaultValue = "0", required = false) Integer page, @RequestParam(value = "size", defaultValue = "10", required = false) Integer size) {
 		return service.findAll(page, size);
+	}
+
+	@GetMapping(value = "/cards/{id}")
+	public Card findAll(@PathVariable(value = "id") String id) {
+		return service.findOne(id);
 	}
 
 	@PostMapping(value = "/cards")

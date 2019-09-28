@@ -33,6 +33,11 @@ public class CardServiceImpl implements CardService {
 	}
 
 	@Override
+	public Card findOne(String objectId) {
+		return repository.findById(objectId).get();
+	}
+
+	@Override
 	public Card create(Card card) {
 		return repository.save(card);
 	}

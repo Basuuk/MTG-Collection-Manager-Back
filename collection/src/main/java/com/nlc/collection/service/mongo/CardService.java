@@ -8,6 +8,8 @@ public interface CardService {
 
 	Page<Card> findAll(Integer page, Integer size);
 
+	Card findOne(String objectId);
+
 	Card create(Card card);
 
 	void splitFile();
