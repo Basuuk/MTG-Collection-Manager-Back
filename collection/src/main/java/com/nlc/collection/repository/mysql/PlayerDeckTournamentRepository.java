@@ -13,4 +13,9 @@ public interface PlayerDeckTournamentRepository extends PagingAndSortingReposito
 
 	List<PlayerDeckTournament> findByIdIdTournamentAndIdIdPlayer(Integer tournamentId, Integer playerId);
 
+	List<PlayerDeckTournament> findByIdIdPlayer(Integer playerId);
+
+	@Override
+	List<PlayerDeckTournament> findAll();
+
 }

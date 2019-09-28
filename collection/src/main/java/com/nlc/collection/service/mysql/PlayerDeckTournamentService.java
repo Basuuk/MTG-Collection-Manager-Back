@@ -10,4 +10,8 @@ public interface PlayerDeckTournamentService {
 
 	List<PlayerDeckTournament> findByIdIdTournamentAndIdIdPlayer(Integer tournamentId, Integer playerId);
 
+	List<PlayerDeckTournament> findByIdIdPlayer(Integer playerId);
+
+	List<PlayerDeckTournament> findAll();
+
 }

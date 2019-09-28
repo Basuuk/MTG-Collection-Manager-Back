@@ -28,4 +28,14 @@ public class PlayerDeckTournamentController {
 		return service.findByIdIdTournamentAndIdIdPlayer(tournamentId, playerId);
 	}
 
+	@GetMapping(value = "/onlyPlayerPdt")
+	public List<PlayerDeckTournament> findByPlayer(@RequestParam(value = "playerId", required = true) Integer playerId) {
+		return service.findByIdIdPlayer(playerId);
+	}
+
+	@GetMapping(value = "/pdts")
+	public List<PlayerDeckTournament> findAll() {
+		return service.findAll();
+	}
+
 }

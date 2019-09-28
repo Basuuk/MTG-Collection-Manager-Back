@@ -25,4 +25,13 @@ public class PlayerDeckTournamentServiceImpl implements PlayerDeckTournamentServ
 		return repository.findByIdIdTournamentAndIdIdPlayer(tournamentId, playerId);
 	}
 
+	@Override
+	public List<PlayerDeckTournament> findByIdIdPlayer(Integer playerId) {
+		return repository.findByIdIdPlayer(playerId);
+	}
+
+	@Override
+	public List<PlayerDeckTournament> findAll() {
+		return repository.findAll();
+	}
 }
