@@ -25,4 +25,9 @@ public class TournamentRoundServiceImpl implements TournamentRoundService {
 		return repository.findByIdIdTournamentAndPlayer1Id(tournamentId, playerId);
 	}
 
+	@Override
+	public TournamentRound save(TournamentRound tR) {
+		return repository.save(tR);
+	}
+
 }

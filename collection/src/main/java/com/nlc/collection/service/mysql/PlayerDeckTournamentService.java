@@ -14,4 +14,6 @@ public interface PlayerDeckTournamentService {
 
 	List<PlayerDeckTournament> findAll();
 
+	PlayerDeckTournament save(PlayerDeckTournament pDT);
+
 }

@@ -8,4 +8,6 @@ public interface DeckService {
 
 	Page<Deck> findAll(Integer page, Integer size);
 
+	Deck save(String deck, Integer format);
+
 }

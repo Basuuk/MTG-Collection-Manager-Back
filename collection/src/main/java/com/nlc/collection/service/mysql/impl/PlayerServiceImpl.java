@@ -20,4 +20,9 @@ public class PlayerServiceImpl implements PlayerService {
 		return repository.findAll(PageRequest.of(page, size));
 	}
 
+	@Override
+	public Player save(String player) {
+		return repository.save(new Player(null, player));
+	}
+
 }

@@ -10,4 +10,5 @@ public interface TournamentRoundService {
 
 	List<TournamentRound> findByIdIdTournamentAndPlayer1Id(Integer tournamentId, Integer playerId);
 
+	TournamentRound save(TournamentRound tR);
 }

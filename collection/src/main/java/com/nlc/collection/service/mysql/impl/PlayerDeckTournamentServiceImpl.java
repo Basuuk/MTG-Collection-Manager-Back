@@ -34,4 +34,9 @@ public class PlayerDeckTournamentServiceImpl implements PlayerDeckTournamentServ
 	public List<PlayerDeckTournament> findAll() {
 		return repository.findAll();
 	}
+
+	@Override
+	public PlayerDeckTournament save(PlayerDeckTournament pDT) {
+		return repository.save(pDT);
+	}
 }

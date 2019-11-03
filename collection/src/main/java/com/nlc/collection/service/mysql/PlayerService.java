@@ -8,4 +8,6 @@ public interface PlayerService {
 
 	Page<Player> findAll(Integer page, Integer size);
 
+	Player save(String player);
+
 }
